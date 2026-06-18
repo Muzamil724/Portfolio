@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muzamil — Cloud Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#ffffff;
+  --bg2:#f8f8f6;
+  --text:#1a1a1a;
+  --text2:#6b6b6b;
+  --text3:#9b9b9b;
+  --border:#e8e8e8;
+  --accent:#2563eb;
+  --accent-light:#eff4ff;
+  --mono:'JetBrains Mono',monospace;
+  --sans:'Inter',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:15px;line-height:1.6}
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:0 2rem}
+.nav-inner{max-width:860px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:52px}
+.nav-logo{font-family:var(--mono);font-size:13px;font-weight:500;color:var(--text);letter-spacing:0.02em}
+.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;gap:1.5rem}
+.nav-links a{font-size:13px;color:var(--text2);text-decoration:none;transition:color 0.15s}
+.nav-links a:hover{color:var(--text)}
+section{padding:5rem 2rem}
+.inner{max-width:860px;margin:0 auto}
+section:nth-child(even){background:var(--bg2)}
+#hero{padding:6rem 2rem 5rem}
+.hero-tag{font-family:var(--mono);font-size:12px;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1.25rem}
+#hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:300;line-height:1.15;letter-spacing:-0.02em;margin-bottom:1.25rem}
+#hero h1 strong{font-weight:600}
+.hero-sub{font-size:1.0625rem;color:var(--text2);max-width:520px;line-height:1.7;margin-bottom:2rem}
+.hero-btns{display:flex;gap:0.75rem;flex-wrap:wrap}
+.btn-primary{background:var(--accent);color:#fff;padding:0.6rem 1.25rem;border-radius:6px;text-decoration:none;font-size:13px;font-weight:500;transition:opacity 0.15s}
+.btn-primary:hover{opacity:0.85}
+.btn-ghost{border:1px solid var(--border);color:var(--text);padding:0.6rem 1.25rem;border-radius:6px;text-decoration:none;font-size:13px;font-weight:400;transition:border-color 0.15s}
+.btn-ghost:hover{border-color:#aaa}
+.hero-meta{display:flex;gap:2rem;margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border)}
+.hero-stat .num{font-size:1.5rem;font-weight:600;color:var(--text)}
+.hero-stat .lbl{font-size:12px;color:var(--text3);margin-top:2px}
+.sec-label{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.75rem}
+.sec-title{font-size:1.5rem;font-weight:500;letter-spacing:-0.01em;margin-bottom:0.5rem}
+.sec-sub{color:var(--text2);font-size:0.9375rem;margin-bottom:2.5rem}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.about-text p{color:var(--text2);line-height:1.8;margin-bottom:1rem}
+.about-facts{display:flex;flex-direction:column;gap:1rem}
+.fact{display:flex;align-items:flex-start;gap:0.75rem;padding:0.875rem 1rem;border:1px solid var(--border);border-radius:8px}
+.fact-icon{font-size:16px;margin-top:2px;flex-shrink:0}
+.fact-title{font-size:13px;font-weight:500}
+.fact-sub{font-size:12px;color:var(--text3);margin-top:1px}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+.skill-card{border:1px solid var(--border);border-radius:10px;padding:1.25rem}
+.skill-card-title{font-size:13px;font-weight:500;margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem}
+.skill-card-title .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0}
+.skill-tags{display:flex;flex-wrap:wrap;gap:0.4rem}
+.tag{font-family:var(--mono);font-size:11px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);padding:3px 8px;border-radius:4px}
+.tag.highlight{background:var(--accent-light);border-color:#bdd0f8;color:var(--accent)}
+.proj-card{border:1px solid var(--border);border-radius:10px;padding:1.5rem;margin-bottom:1rem;transition:border-color 0.15s}
+.proj-card:hover{border-color:#aaa}
+.proj-header{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:0.75rem}
+.proj-name{font-size:1rem;font-weight:600}
+.proj-badge{font-family:var(--mono);font-size:10px;padding:3px 8px;border-radius:4px;border:1px solid;flex-shrink:0}
+.proj-badge.live{background:#f0fdf4;border-color:#86efac;color:#166534}
+.proj-badge.wip{background:#fffbeb;border-color:#fcd34d;color:#854d0e}
+.proj-desc{font-size:14px;color:var(--text2);line-height:1.7;margin-bottom:1rem}
+.proj-stack{display:flex;flex-wrap:wrap;gap:0.35rem}
+.timeline{position:relative;padding-left:1.5rem}
+.timeline::before{content:'';position:absolute;left:0;top:6px;bottom:0;width:1px;background:var(--border)}
+.tl-item{position:relative;padding-bottom:2.5rem}
+.tl-item:last-child{padding-bottom:0}
+.tl-dot{position:absolute;left:-1.75rem;top:6px;width:8px;height:8px;border-radius:50%;background:var(--accent);border:2px solid var(--bg)}
+.tl-date{font-family:var(--mono);font-size:11px;color:var(--text3);margin-bottom:0.25rem}
+.tl-role{font-size:0.9375rem;font-weight:600;margin-bottom:2px}
+.tl-company{font-size:13px;color:var(--accent);margin-bottom:0.5rem}
+.tl-desc{font-size:13.5px;color:var(--text2);line-height:1.7}
+.tl-desc li{margin-bottom:0.3rem;list-style:none;padding-left:1rem;position:relative}
+.tl-desc li::before{content:'—';position:absolute;left:0;color:var(--text3)}
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
+.cert-card{border:1px solid var(--border);border-radius:10px;padding:1.25rem;display:flex;flex-direction:column;gap:0.5rem}
+.cert-logo{width:36px;height:36px;background:var(--accent-light);border-radius:6px;display:flex;align-items:center;justify-content:center;margin-bottom:0.25rem}
+.cert-name{font-size:13.5px;font-weight:500}
+.cert-issuer{font-size:12px;color:var(--text3)}
+.cert-year{font-family:var(--mono);font-size:11px;color:var(--accent);margin-top:auto}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start}
+.contact-text p{color:var(--text2);line-height:1.8;margin-bottom:1.5rem}
+.contact-links{display:flex;flex-direction:column;gap:0.75rem}
+.contact-link{display:flex;align-items:center;gap:0.75rem;padding:0.875rem 1rem;border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text);font-size:13.5px;transition:border-color 0.15s}
+.contact-link:hover{border-color:var(--accent)}
+.contact-link-icon{width:32px;height:32px;background:var(--bg2);border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px}
+.contact-link-detail{font-size:12px;color:var(--text3);margin-top:1px}
+footer{padding:2rem;text-align:center;border-top:1px solid var(--border)}
+footer p{font-size:12px;color:var(--text3)}
+footer span{color:var(--accent);font-family:var(--mono)}
+@media(max-width:640px){
+  .about-grid,.contact-grid{grid-template-columns:1fr}
+  .hero-meta{gap:1.25rem}
+  .nav-links{gap:1rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo"><span>Muzamil</span> Khalil</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="inner">
+    <div class="hero-tag">☁ Cloud Engineer · Lahore, Pakistan</div>
+    <h1>Hi, I'm <strong>Muzamil Khalil.</strong><br>I build on Azure.</h1>
+    <p class="hero-sub">Junior cloud engineer with hands-on experience in Azure PaaS, ASP.NET Core, and IT infrastructure. Currently building cloud-native applications and working toward a career in cloud engineering.</p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn-primary">View Projects</a>
+      <a href="#contact" class="btn-ghost">Get in Touch</a>
+    </div>
+    <div class="hero-meta">
+      <div class="hero-stat"><div class="num">1+</div><div class="lbl">Year in IT Support</div></div>
+      <div class="hero-stat"><div class="num">AZ-900</div><div class="lbl">Azure Certified</div></div>
+      <div class="hero-stat"><div class="num">BCS</div><div class="lbl">Virtual University</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="inner">
+    <div class="sec-label">01 — About</div>
+    <div class="about-grid">
+      <div class="about-text">
+        <div class="sec-title">A developer turned cloud engineer.</div>
+        <p>I started in software development — building desktop applications with C# .NET — and moved into IT and application support, managing Windows Server environments and helping users stay productive. That combination of writing code and running infrastructure is what drew me to cloud engineering.</p>
+        <p>I'm currently building <strong>CloudDesk</strong>, a cloud-native IT support ticketing system on Azure, to deepen my hands-on skills with Azure App Service, SQL Database, Blob Storage, Bicep, and GitHub Actions CI/CD.</p>
+        <p>Based in Lahore. Studying Computer Science at Virtual University of Pakistan. Looking for my first cloud engineering role.</p>
+      </div>
+      <div class="about-facts">
+        <div class="fact">
+          <div class="fact-icon">🎓</div>
+          <div><div class="fact-title">Bachelor of Computer Science</div><div class="fact-sub">Virtual University of Pakistan · In progress</div></div>
+        </div>
+        <div class="fact">
+          <div class="fact-icon">📍</div>
+          <div><div class="fact-title">Lahore, Pakistan</div><div class="fact-sub">Open to remote & hybrid roles</div></div>
+        </div>
+        <div class="fact">
+          <div class="fact-icon">⚡</div>
+          <div><div class="fact-title">Background</div><div class="fact-sub">C# .NET dev → IT support → Cloud</div></div>
+        </div>
+        <div class="fact">
+          <div class="fact-icon">🔭</div>
+          <div><div class="fact-title">Currently building</div><div class="fact-sub">CloudDesk on Azure — IaC, CI/CD, PaaS</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="inner">
+    <div class="sec-label">02 — Skills</div>
+    <div class="sec-title">What I work with</div>
+    <div class="sec-sub">Hands-on with the Azure ecosystem, cloud-native development, and IT infrastructure.</div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-card-title"><span class="dot"></span>Azure Cloud</div>
+        <div class="skill-tags">
+          <span class="tag highlight">App Service</span>
+          <span class="tag highlight">Azure SQL</span>
+          <span class="tag highlight">Blob Storage</span>
+          <span class="tag highlight">Application Insights</span>
+          <span class="tag">Managed Identity</span>
+          <span class="tag">Bicep / ARM</span>
+          <span class="tag">Azure Monitor</span>
+          <span class="tag">Key Vault</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-title"><span class="dot"></span>Development</div>
+        <div class="skill-tags">
+          <span class="tag highlight">ASP.NET Core</span>
+          <span class="tag highlight">C#</span>
+          <span class="tag">REST APIs</span>
+          <span class="tag">Entity Framework</span>
+          <span class="tag">.NET Framework</span>
+          <span class="tag">Python</span>
+          <span class="tag">Flask</span>
+          <span class="tag">React</span>
+        </div>
+      </div>
+      <!-- <div class="skill-card">
+        <div class="skill-card-title"><span class="dot"></span>DevOps & CI/CD</div>
+        <div class="skill-tags">
+          <span class="tag highlight">GitHub Actions</span>
+          <span class="tag highlight">Docker</span>
+          <span class="tag">Docker Compose</span>
+          <span class="tag">Nginx</span>
+          <span class="tag">Git</span>
+          <span class="tag">WSL2</span>
+          <span class="tag">Bicep IaC</span>
+        </div>
+      </div> -->
+      <div class="skill-card">
+        <div class="skill-card-title"><span class="dot"></span>IT Infrastructure</div>
+        <div class="skill-tags">
+          <span class="tag highlight">Windows Server</span>
+          <span class="tag highlight">RDP Administration</span>
+          <span class="tag">Active Directory</span>
+          <span class="tag">Application Support</span>
+          <span class="tag">Networking</span>
+          <span class="tag">Troubleshooting</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="inner">
+    <div class="sec-label">03 — Projects</div>
+    <div class="sec-title">Things I've built</div>
+    <div class="sec-sub">Personal and professional projects demonstrating cloud and development skills.</div>
+
+    <div class="proj-card">
+      <div class="proj-header">
+        <div class="proj-name">CloudDesk — Azure IT Support Ticketing System</div>
+        <span class="proj-badge wip">In Progress</span>
+      </div>
+      <p class="proj-desc">A cloud-native IT helpdesk ticketing system built on Azure to demonstrate real-world PaaS skills. Features full CRUD ticket management, file attachments via Blob Storage, live monitoring with Application Insights, Bicep-based infrastructure as code, and GitHub Actions CI/CD pipeline. Designed with managed identity — no secrets in code.</p>
+      <div class="proj-stack">
+        <span class="tag highlight">ASP.NET Core</span>
+        <span class="tag highlight">Azure App Service</span>
+        <span class="tag highlight">Azure SQL</span>
+        <span class="tag highlight">Blob Storage</span>
+        <span class="tag highlight">App Insights</span>
+        <span class="tag">Bicep</span>
+        <span class="tag">GitHub Actions</span>
+        <span class="tag">Managed Identity</span>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-header">
+        <div class="proj-name">Restaurant Management System</div>
+        <span class="proj-badge live">Complete</span>
+      </div>
+      <p class="proj-desc">A desktop application for restaurant order and menu management, built with C# and .NET Framework. Covers order tracking, menu CRUD, and basic reporting. One of my earlier projects that established a strong C# foundation before moving into cloud and infrastructure work.</p>
+      <div class="proj-stack">
+        <span class="tag highlight">C#</span>
+        <span class="tag highlight">.NET Framework</span>
+        <span class="tag">Windows Forms</span>
+        <span class="tag">SQL Server</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="inner">
+    <div class="sec-label">04 — Experience</div>
+    <div class="sec-title">Where I've worked</div>
+    <div class="sec-sub">A blend of software development and IT infrastructure that led me to cloud engineering.</div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">2023 — Present</div>
+        <div class="tl-role">IT / Application Support Administrator</div>
+        <div class="tl-company">Sara Enterprises · Lahore</div>
+        <ul class="tl-desc">
+          <li>Administered Windows Server environments and managed RDP sessions for remote users</li>
+          <li>Provided first and second-line application support, diagnosing and resolving software issues</li>
+          <li>Maintained user accounts, permissions, and access controls</li>
+          <li>Documented recurring issues and built internal resolution guides to reduce repeat tickets</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">2022 — 2023</div>
+        <div class="tl-role">C# .NET Developer Intern</div>
+        <div class="tl-company">CodSoft · Remote</div>
+        <ul class="tl-desc">
+          <li>Built desktop applications using C# and .NET Framework, including the Restaurant Management System</li>
+          <li>Wrote clean, maintainable code with a focus on CRUD functionality and data persistence</li>
+          <li>Gained experience working in a team environment with version control via Git</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="certs" style="background:var(--bg)">
+  <div class="inner">
+    <div class="sec-label">05 — Certifications</div>
+    <div class="sec-title">Credentials</div>
+    <div class="sec-sub">Formal certifications supporting my cloud engineering path.</div>
+    <div class="cert-grid">
+      <div class="cert-card">
+        <div class="cert-logo">
+          <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 2L3 7v6l7 5 7-5V7L10 2z" stroke="#2563eb" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M10 2v15M3 7l7 5 7-5" stroke="#2563eb" stroke-width="1.5" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="cert-name">Microsoft Azure Fundamentals</div>
+        <div class="cert-issuer">Microsoft</div>
+        <div class="cert-year">AZ-900 · 2024</div>
+      </div>
+      <div class="cert-card" style="border-style:dashed;background:var(--bg2)">
+        <div class="cert-logo" style="background:#f0fdf4">
+          <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="10" cy="10" r="7" stroke="#16a34a" stroke-width="1.5"/>
+            <path d="M10 6v4l3 3" stroke="#16a34a" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="cert-name">Azure Administrator Associate</div>
+        <div class="cert-issuer">Microsoft</div>
+        <div class="cert-year" style="color:#16a34a">AZ-104 · In Progress</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="background:var(--bg2)">
+  <div class="inner">
+    <div class="sec-label">06 — Contact</div>
+    <div class="contact-grid">
+      <div class="contact-text">
+        <div class="sec-title">Let's work together.</div>
+        <p>I'm actively looking for cloud engineering internship and junior roles. If you're building something on Azure or need someone who bridges development and infrastructure, I'd love to connect.</p>
+        <p>Response time is usually within 24 hours.</p>
+      </div>
+      <div class="contact-links">
+        <a href="mailto:muzamil@email.com" class="contact-link">
+          <div class="contact-link-icon">✉</div>
+          <div>
+            <div>Email me</div>
+            <div class="contact-link-detail">muzamil@email.com</div>
+          </div>
+        </a>
+        <a href="https://linkedin.com/in/muzamil" class="contact-link" target="_blank">
+          <div class="contact-link-icon">in</div>
+          <div>
+            <div>LinkedIn</div>
+            <div class="contact-link-detail">linkedin.com/in/muzamil</div>
+          </div>
+        </a>
+        <a href="https://github.com/muzamil" class="contact-link" target="_blank">
+          <div class="contact-link-icon">⌥</div>
+          <div>
+            <div>GitHub</div>
+            <div class="contact-link-detail">github.com/muzamil</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Built by <span>Muzamil Hassan</span> · Lahore, Pakistan · 2025</p>
+</footer>
+
+</body>
+</html>
