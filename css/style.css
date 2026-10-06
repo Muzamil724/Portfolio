@@ -240,3 +240,10 @@ h3{font-size:1.0625rem;font-weight:600}
   .timeline::after{height:100%}
   .progress{display:none}
 }
+
+/* Email row with small copy button */
+.link.has-copy{padding:0;gap:0;cursor:default}
+.link-main{flex:1;min-width:0;display:flex;align-items:center;gap:14px;padding:14px 16px;text-decoration:none;color:inherit}
+.link-main small{overflow-wrap:anywhere}
+.copy-btn{display:inline-flex;align-items:center;gap:6px;margin-right:12px;padding:6px 10px;font:500 12px var(--mono);color:var(--muted);background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);cursor:pointer;flex-shrink:0;position:relative;z-index:1;transition:color .15s,border-color .15s}
+.copy-btn:hover{color:var(--accent);border-color:var(--accent)}

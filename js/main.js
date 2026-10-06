@@ -69,7 +69,7 @@
       const original = label.textContent;
       btn.addEventListener('click', async () => {
         try { await navigator.clipboard.writeText(btn.dataset.copy); label.textContent = 'Copied'; }
-        catch (e) { label.textContent = 'Copy failed. Use the email link above.'; }
+        catch (e) { label.textContent = 'Failed'; }
         setTimeout(() => (label.textContent = original), 2000);
       });
     });
