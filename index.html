@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Muzamil Khalil — Cloud Engineer</title>
-<meta name="description" content="Muzamil Khalil is a junior cloud engineer in Lahore working with Azure, Linux, Docker and ASP.NET Core.">
-<meta property="og:title" content="Muzamil Khalil — Cloud Engineer">
-<meta property="og:description" content="Azure, Linux, Docker and ASP.NET Core. Currently building CloudDesk, a cloud-native ticketing system.">
+<title>Muzamil Khalil — Cloud & DevOps Engineer</title>
+<meta name="description" content="Muzamil Khalil is a junior cloud and DevOps engineer in Lahore working with Azure, CI/CD, Docker, Jenkins and ASP.NET Core.">
+<meta property="og:title" content="Muzamil Khalil — Cloud & DevOps Engineer">
+<meta property="og:description" content="CI/CD pipelines, Docker, Jenkins and Azure. Currently building CloudDesk, a cloud-native ticketing system.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://muzamilkhalil.is-a.dev/">
 <meta name="theme-color" content="#0b5fd8">
@@ -49,9 +49,9 @@
 <section id="top" class="hero">
   <div class="wrap hero-grid">
     <div>
-      <p class="kicker">Cloud engineer in Lahore, Pakistan</p>
-      <h1>Hi, I'm Muzamil Khalil. I build on Azure.</h1>
-      <p class="lead">Junior cloud engineer with hands-on experience in Azure PaaS, ASP.NET Core, and IT infrastructure. Currently building cloud-native applications and working toward a career in cloud engineering.</p>
+      <p class="kicker">Cloud &amp; DevOps engineer in Lahore, Pakistan</p>
+      <h1>Hi, I'm Muzamil Khalil. I build and automate on Azure.</h1>
+      <p class="lead">Junior cloud and DevOps engineer with hands-on experience in CI/CD pipelines, Docker, Azure PaaS, and ASP.NET Core. I recently completed a DevOps internship at CodeAlpha, where I built pipelines, containers, and Jenkins agents from scratch.</p>
       <div class="btn-row">
         <a href="#projects" class="btn btn-primary">View projects</a>
         <a href="#contact" class="btn btn-ghost">Get in touch</a>
@@ -65,7 +65,7 @@
         <div><dt>certified</dt><dd>AZ-900</dd></div>
         <div><dt>degree</dt><dd>BS Computer Science</dd></div>
         <div><dt>building</dt><dd>CloudDesk on Azure</dd></div>
-        <div><dt>learning</dt><dd>Docker, HCCDA-AI</dd></div>
+        <div><dt>internship</dt><dd>DevOps at CodeAlpha</dd></div>
       </dl>
     </aside>
   </div>
@@ -78,13 +78,13 @@
       <div class="prose">
         <p>I started in software development, building applications with C# .NET and Python, then moved into IT and application support, managing Linux and Windows Server environments. Combining code and core infrastructure is what drew me to cloud engineering.</p>
         <p>I'm currently building <strong>CloudDesk</strong>, a cloud-native IT support ticketing system on Azure, to deepen my hands-on skills with Azure App Service, SQL Database, Blob Storage, Bicep, and GitHub Actions CI/CD.</p>
-        <p>Based in Lahore. Graduated with a BS CS from Virtual University of Pakistan. Currently expanding my skills in AI development and containerized microservices.</p>
+        <p>Based in Lahore. Graduated with a BS CS from Virtual University of Pakistan. Most recently I completed a remote DevOps internship at CodeAlpha, building CI/CD pipelines, Docker images, and Jenkins agents.</p>
       </div>
       <ul class="facts">
         <li><strong>BS Computer Science</strong><span>Virtual University of Pakistan</span></li>
         <li><strong>Lahore, Pakistan</strong><span>Open to remote and hybrid roles</span></li>
         <li><strong>Background</strong><span>C# .NET and Python, then Linux and IT support, now cloud</span></li>
-        <li><strong>Currently building and learning</strong><span>CloudDesk on Azure, HCCDA-AI, Docker</span></li>
+        <li><strong>Currently building and learning</strong><span>CloudDesk on Azure, HCCDA-AI, CI/CD</span></li>
       </ul>
     </div>
   </div>
@@ -93,8 +93,15 @@
 <section id="skills" class="section alt">
   <div class="wrap">
     <h2>What I work with</h2>
-    <p class="sub">Hands-on with Azure, Linux administration, cloud-native development, and containerization.</p>
+    <p class="sub">Hands-on with CI/CD, containers, Azure, Linux administration, and cloud-native development.</p>
     <div class="skill-list">
+      <div class="skill-row">
+        <h3>CI/CD &amp; containers</h3>
+        <ul class="tags">
+          <li class="tag hl">Azure Pipelines</li><li class="tag hl">GitHub Actions</li><li class="tag hl">Docker</li><li class="tag hl">Jenkins</li>
+          <li class="tag">Azure Container Registry</li><li class="tag">Self-hosted agents</li><li class="tag">Nginx</li><li class="tag">Multi-stage builds</li>
+        </ul>
+      </div>
       <div class="skill-row">
         <h3>Azure cloud &amp; AI</h3>
         <ul class="tags">
@@ -110,10 +117,10 @@
         </ul>
       </div>
       <div class="skill-row">
-        <h3>DevOps &amp; infrastructure</h3>
+        <h3>Infrastructure</h3>
         <ul class="tags">
-          <li class="tag hl">Linux system admin</li><li class="tag hl">Docker</li>
-          <li class="tag">GitHub Actions</li><li class="tag">Windows Server</li><li class="tag">Active Directory</li><li class="tag">Networking</li>
+          <li class="tag hl">Linux system admin</li><li class="tag hl">Windows Server</li>
+          <li class="tag">Active Directory</li><li class="tag">Networking</li>
         </ul>
       </div>
     </div>
@@ -123,27 +130,58 @@
 <section id="projects" class="section">
   <div class="wrap">
     <h2>Things I've built</h2>
-    <p class="sub">Personal and professional projects demonstrating cloud and development skills.</p>
+    <p class="sub">Personal and professional projects demonstrating DevOps, cloud and development skills.</p>
+    <h3 class="group">DevOps internship projects (CodeAlpha)</h3>
+    <article class="card">
+      <div class="card-head">
+        <h3>CI/CD pipeline on Azure</h3>
+        <span class="badge done">Complete</span>
+      </div>
+      <p>A full pipeline for an ASP.NET Core API. Azure Pipelines builds a multi-stage Docker image, pushes it to Azure Container Registry, then deploys it to Azure App Service. Runs on a self-hosted agent, and the deployed app is verified through its /health endpoint.</p>
+      <ul class="tags"><li class="tag hl">Azure Pipelines</li><li class="tag hl">Azure Container Registry</li><li class="tag hl">App Service</li><li class="tag hl">Docker</li><li class="tag">ASP.NET Core</li><li class="tag">Self-hosted agent</li></ul>
+      <a class="proj-link" href="https://github.com/Muzamil724/CodeAlpha_AzureCICD_Pipeline" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+    </article>
+    <article class="card">
+      <div class="card-head">
+        <h3>Dockerized Nginx web server</h3>
+        <span class="badge done">Complete</span>
+      </div>
+      <p>An Nginx web server in a Docker container serving a custom page, with a HEALTHCHECK configured and the full container lifecycle demonstrated (build, run, stop, restart, remove).</p>
+      <ul class="tags"><li class="tag hl">Docker</li><li class="tag hl">Nginx</li><li class="tag hl">HEALTHCHECK</li></ul>
+      <a class="proj-link" href="https://github.com/Muzamil724/CodeAlpha_DockerWebServer" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+    </article>
+    <article class="card">
+      <div class="card-head">
+        <h3>Jenkins remoting: distributed builds</h3>
+        <span class="badge done">Complete</span>
+      </div>
+      <p>A Jenkins controller and a remote agent node running in separate Docker containers on a shared network. A build job was confirmed to run on the remote agent rather than the controller.</p>
+      <ul class="tags"><li class="tag hl">Jenkins</li><li class="tag hl">Docker</li><li class="tag hl">Docker networks</li><li class="tag hl">Distributed builds</li></ul>
+    </article>
+    <h3 class="group">Personal projects</h3>
     <article class="card">
       <div class="card-head">
         <h3>CloudDesk: Azure IT support ticketing system</h3>
         <span class="badge wip">In progress</span>
       </div>
       <p>A cloud-native IT helpdesk ticketing system built on Azure to demonstrate real-world PaaS skills. Features full CRUD ticket management, file attachments via Blob Storage, live monitoring with Application Insights, Bicep-based infrastructure as code, and a GitHub Actions CI/CD pipeline. Designed with managed identity, so there are no secrets in code.</p>
-      <ul class="tags">
-        <li class="tag hl">ASP.NET Core</li><li class="tag hl">Azure App Service</li><li class="tag hl">Azure SQL</li><li class="tag hl">Blob Storage</li><li class="tag hl">App Insights</li>
-        <li class="tag">Bicep</li><li class="tag">GitHub Actions</li><li class="tag">Managed Identity</li>
-      </ul>
+      <ul class="tags"><li class="tag hl">ASP.NET Core</li><li class="tag hl">Azure App Service</li><li class="tag hl">Azure SQL</li><li class="tag hl">Blob Storage</li><li class="tag">App Insights</li><li class="tag">Bicep</li><li class="tag">GitHub Actions</li><li class="tag">Managed Identity</li></ul>
+    </article>
+    <article class="card">
+      <div class="card-head">
+        <h3>Dockerized Flask + React application</h3>
+        <span class="badge done">Complete</span>
+      </div>
+      <p>A full-stack app with a Flask API and React front end, served behind an Nginx reverse proxy. Containerized with Docker and shipped through a GitHub Actions CI/CD pipeline.</p>
+      <ul class="tags"><li class="tag hl">Docker</li><li class="tag hl">Flask</li><li class="tag hl">React</li><li class="tag hl">Nginx</li><li class="tag">GitHub Actions</li></ul>
     </article>
     <article class="card">
       <div class="card-head">
         <h3>Restaurant Management System</h3>
         <span class="badge done">Complete</span>
       </div>
-      <p>A desktop application for restaurant order and menu management, built with C# and .NET Framework. Covers order tracking, menu CRUD, and basic reporting. One of my earlier projects that established a strong C# foundation before moving into cloud and infrastructure work.</p>
-      <ul class="tags">
-        <li class="tag hl">C#</li><li class="tag hl">.NET Framework</li><li class="tag">Windows Forms</li><li class="tag">SQL Server</li>
-      </ul>
+      <p>A desktop application for restaurant order and menu management, built with C# and .NET Framework. Covers order tracking, menu CRUD, and reporting. Later hardened by fixing SQL injection, plaintext password storage, and hardcoded credentials, and by migrating reports from Crystal Reports to RDLC.</p>
+      <ul class="tags"><li class="tag hl">C#</li><li class="tag hl">.NET Framework</li><li class="tag hl">Windows Forms</li><li class="tag hl">ADO.NET</li><li class="tag">SQL Server</li><li class="tag">RDLC</li></ul>
     </article>
   </div>
 </section>
@@ -153,6 +191,17 @@
     <h2>Where I've worked</h2>
     <p class="sub">A blend of software development and IT infrastructure that led me to cloud engineering.</p>
     <ol class="timeline">
+      <li>
+        <time>2026</time>
+        <h3>DevOps Intern</h3>
+        <p class="org">CodeAlpha, Remote (1 month)</p>
+        <ul>
+          <li>Built a CI/CD pipeline in Azure Pipelines that builds a Docker image, pushes it to Azure Container Registry, and deploys to Azure App Service</li>
+          <li>Containerized an Nginx web server with health checks and documented its container lifecycle</li>
+          <li>Set up a Jenkins controller and a remote agent in Docker and ran distributed builds on it</li>
+          <li>Published each task as a public GitHub repository</li>
+        </ul>
+      </li>
       <li>
         <time>2024 – present</time>
         <h3>IT / Application Support Administrator</h3>
@@ -194,7 +243,7 @@
   <div class="wrap contact-grid">
     <div class="prose">
       <h2>Let's work together</h2>
-      <p>I'm actively looking for cloud engineering internship and junior roles. If you're building something on Azure or need someone who bridges development and infrastructure, I'd love to connect.</p>
+      <p>I'm actively looking for junior cloud and DevOps engineering roles. If you're building on Azure, automating deployments, or need someone who bridges development and infrastructure, I'd love to connect.</p>
       <p>I usually reply within 24 hours.</p>
     </div>
     <div class="links">

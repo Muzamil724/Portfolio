@@ -95,6 +95,11 @@ h3{font-size:1.0625rem;font-weight:600}
 .badge.wip{color:var(--warn)}
 .badge.done{color:var(--ok)}
 
+.group{font-size:.9375rem;color:var(--muted);font-weight:500;margin:32px 0 14px;font-family:var(--sans);letter-spacing:0}
+.group:first-of-type{margin-top:0}
+.proj-link{display:inline-block;margin-top:16px;font-size:14px;color:var(--accent);text-decoration:none;font-weight:500}
+.proj-link:hover{text-decoration:underline}
+
 /* Timeline */
 .timeline{position:relative;margin-left:6px;padding-left:28px;border-left:1px solid var(--line)}
 .timeline>li{position:relative;padding-bottom:40px}
